@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "resolvermock",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authresolvermockc7c3562e"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
+  }
+}

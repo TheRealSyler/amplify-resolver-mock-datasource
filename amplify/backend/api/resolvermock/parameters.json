@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "resolvermock",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authresolvermockc7c3562e",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2022-09-01T14:03:07.809Z"
+}

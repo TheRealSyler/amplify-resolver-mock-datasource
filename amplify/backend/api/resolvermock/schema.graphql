@@ -1,0 +1,17 @@
+
+
+
+type Blog @model @auth(rules: [{allow: private}]) {
+  id: ID!
+  name: String!
+  posts: [Post] @hasMany(indexName: "byBlog", fields: ["id"])
+  
+}
+
+type Post @model  @auth(rules: [{allow: private}])  {
+  id: ID!
+  title: String!
+  blogID: ID! @index(name: "byBlog")
+  Blog: Blog @belongsTo
+}
+
