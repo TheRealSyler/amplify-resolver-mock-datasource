@@ -1,0 +1,11 @@
+
+  #if (!$util.isNull($ctx.error))
+  $util.error($util.toJson($ctx.error))
+#end
+
+#if (!$context.result.items.isEmpty())
+  $util.error($util.toJson($context.result))
+  $util.error("cannot delete blog with posts" )
+#end
+
+$util.toJson(null)

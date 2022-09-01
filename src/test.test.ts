@@ -4,7 +4,6 @@ test('delete blog with post', async () => {
   const user = new FakeUser()
 
   const myBlog = await user.mutation('createBlog', { input: { name: 'My Blog' } })
-  console.log(myBlog)
 
   await user.mutation('createPost', {
     input: {
