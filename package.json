@@ -4,9 +4,8 @@
     "copy-aws-config": "cpy ./src/aws-exports.js . --rename=\"aws.config.ts\"",
     "kill-amplify-mock-api": "kill-port 20002 && kill-port 20003",
     "test:jest": "wait-on http-get://localhost:20002 && yarn copy-aws-config && jest && yarn kill-amplify-mock-api || yarn kill-amplify-mock-api && exit 1",
-    "pretest": "yarn kill-amplify-mock-api && del-cli amplify/mock-data/* && node amplify/hooks/pre-push.js",
-    "test": "concurrently -n jest,amplify -c green,blue -s last \"yarn test:jest\" \"amplify mock api\"",
-    "posttest": "node amplify/hooks/pre-push.js"
+    "pretest": "yarn kill-amplify-mock-api && del-cli amplify/mock-data/*",
+    "test": "concurrently -n jest,amplify -c green,blue -s last \"yarn test:jest\" \"amplify mock api\""
   },
   "dependencies": {
     "@aws-amplify/api-graphql": "^2.3.8",
